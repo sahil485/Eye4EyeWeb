@@ -1,51 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '../../globalStyles';
 import { FooterContainer, FooterSubscription, FooterSubHeading,  Form, FormInput, FooterLinksContainer, FooterLinksWrapper, FooterLinksItems, FooterLinkTitle, FooterLink, SocialMedia, SocialMediaWrap, SocialLogo, WebsiteRights, SocialIcons, SocialIconLink } from './Footer.elements';
 import TikTok from '../../images/Svg/tiktok-1.svg';
 import Instagram from '../../images/Svg/instagram-2016-6.svg';
 import Twitter from '../../images/Svg/twitter-4.svg';
 import InvLogo from '../../images/Svg/invLogoSVG.svg';
+import axios from 'axios';
 
 const Footer = () => {
 
+    /*const [subEmail, setEmail] = useState("")
+    function addEmail(){
+        axios.post('/emails', {email: subEmail}).catch(err => console.log(err)).then(console.log("Successfully added email"))
+    }*/
+
     return (
             <FooterContainer>
-                {/*<FooterLinksContainer>
-                    <FooterLinksWrapper>
-                        <FooterLinksItems>
-                            <FooterLinkTitle>About Us</FooterLinkTitle>
-                            <FooterLink to='/signup'>Origins</FooterLink>
-                            <FooterLink to='/signup'>Locations</FooterLink>
-                            <FooterLink to='/signup'>Testimonials</FooterLink>
-                        </FooterLinksItems>
                 
-                        <FooterLinksItems>
-                            <FooterLinkTitle>Contact Us</FooterLinkTitle>
-                            <FooterLink to='/signup'>Origins</FooterLink>
-                            <FooterLink to='/signup'>Locations</FooterLink>
-                            <FooterLink to='/signup'>Testimonials</FooterLink>
-                        </FooterLinksItems>
-
-                        <FooterLinksItems>
-                            <FooterLinkTitle>Follow Us</FooterLinkTitle>
-                            <FooterLink to='/signup'>Origins</FooterLink>
-                            <FooterLink to='/signup'>Locations</FooterLink>
-                            <FooterLink to='/signup'>Testimonials</FooterLink>
-                        </FooterLinksItems>
-
-
-                    </FooterLinksWrapper>
-                    </FooterLinksContainer>*/}
                 <FooterSubscription>
                     <FooterSubHeading>
-                        Enter your email to join mailing our list to receive updates about new clothing releases
+                        Enter your email to receive updates about new clothing releases!
                     </FooterSubHeading>
-                    {/*<FooterSubText>
-                        you can unsubscribe at any time
-                    </FooterSubText>*/}
                     <Form>
-                        <FormInput id = 'email' name='email' type='email' placeholder = 'Your email' require/>
-                        <Button fontBig onClick = {() => {console.log(document.getElementById('email').value)}}>Subscribe</Button>
+                        <FormInput id = 'email' name='email' type='email' placeholder = 'Your email'/>
+                        <Button fontBig>Subscribe</Button>
                     </Form>
                 </FooterSubscription>
 

@@ -13,21 +13,13 @@ const emailSchema = new mongoose.Schema({
     email: String
 })
 
-const Todo = mongoose.model('EmailList', emailSchema)
+const EmailModel = mongoose.model('EmailList', emailSchema)
 
-app.get('/', (req, res) => {
-    Todo.find().then(todo => res.json(todo))
-})
-
-app.post('/todos', (req, res) => {
-    const newTodo = new Todo({
-        title: req.body.title
+app.post('/emails', (req, res) => {
+    const newEmailModel = new EmailModel({
+        email: req.body.email
     })
-    newTodo.save().then(todo => res.json(todo))
-})
-
-app.delete('/todos/:id', (req, res) => {
-    Todo.findByIdAndDelete(req.params.id).then(()=>res.json({remove: true}))
+    newEmailModel.save().then(email => res.json(email))
 })
 
 
