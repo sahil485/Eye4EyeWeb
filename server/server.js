@@ -1,11 +1,14 @@
 const express = require("express")
 const mongoose = require("mongoose")
+const cors = require("cors")
 
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 
-const uri = "mongodb+srv://sillyhill:pgxtpp5k@eye4eye.pt0wj.mongodb.net/UserInfo?retryWrites=true&w=majority"
+
+const uri = "mongodb+srv://sillyhill:pgxtpp5k@eye4eye.pt0wj.mongodb.net/emailList?retryWrites=true&w=majority"
 
 mongoose.connect(uri, ({useNewUrlParser:true})).then(console.log("connected to MongoDB")).catch(err => console.log(err))
 
@@ -15,11 +18,15 @@ const emailSchema = new mongoose.Schema({
 
 const EmailModel = mongoose.model('EmailList', emailSchema)
 
+app.get('/emails', (req, res) =>{
+    EmailModel.find().then(info => console.log(info.json()))
+})
+
 app.post('/emails', (req, res) => {
     const newEmailModel = new EmailModel({
-        email: req.body.email
+        email: req.body.email,
     })
-    newEmailModel.save().then(email => res.json(email))
+    newEmailModel.save().then(res => res.json(res))
 })
 
 

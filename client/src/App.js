@@ -12,16 +12,14 @@ import axios from 'axios';
 
 function App() {
 
-  const [ email , setEmail ] = useState("");
-  const dispatchEmail = (email) => {
-    axios.post('/emails', email)
-  }
+  const [user, setUser] = useState("")
+
 
   return (
     //provider gives a way to pass data to other sections without having to pass the props manually through the component tree
     //especially useful for applications where info has to be customized for users
       <div className="App">
-        <AppContext.Provider>
+        <AppContext.Provider value = {user}>
           <Router>
             <GlobalStyle />
             <ScrollToTop />

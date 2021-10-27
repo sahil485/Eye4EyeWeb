@@ -106,7 +106,7 @@ height: 100%;
     padding: 2rem;
     width: 100%;
     display:table;
-
+    color: white;
     &:hover{
         color:#4b59f7;
         transition: all 0.3s ease;

@@ -6,26 +6,15 @@ import Instagram from '../../images/Svg/instagram-2016-6.svg';
 import Twitter from '../../images/Svg/twitter-4.svg';
 import InvLogo from '../../images/Svg/invLogoSVG.svg';
 import axios from 'axios';
+import NewSub from './newSub';
 
 const Footer = () => {
 
-    /*const [subEmail, setEmail] = useState("")
-    function addEmail(){
-        axios.post('/emails', {email: subEmail}).catch(err => console.log(err)).then(console.log("Successfully added email"))
-    }*/
 
     return (
             <FooterContainer>
                 
-                <FooterSubscription>
-                    <FooterSubHeading>
-                        Enter your email to receive updates about new clothing releases!
-                    </FooterSubHeading>
-                    <Form>
-                        <FormInput id = 'email' name='email' type='email' placeholder = 'Your email'/>
-                        <Button fontBig>Subscribe</Button>
-                    </Form>
-                </FooterSubscription>
+               <NewSub/>
 
                 <SocialMedia>
                     <SocialMediaWrap>   

@@ -4,7 +4,7 @@ import { FaMagento } from'react-icons/fa';
 
 export const FooterContainer = styled.div`
 background-color: black;
-padding: 4rem 0 2rem 0;
+padding: 2rem 0 0 0;//4rem 0 2rem 0;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -17,8 +17,8 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 text-align: center;
-margin-bottom: 24px;
-padding: 24px;
+margin-bottom: 10px;
+padding: 12px;
 color: #fff;
 `
 
