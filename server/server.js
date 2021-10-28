@@ -8,7 +8,7 @@ app.use(express.json())
 app.use(cors())
 
 
-const uri = "mongodb+srv://sillyhill:<password>@eye4eye.pt0wj.mongodb.net/emailList?retryWrites=true&w=majority"
+const uri = "mongodb+srv://sillyhill:pgxtpp5k@eye4eye.pt0wj.mongodb.net/emailList?retryWrites=true&w=majority"
 
 mongoose.connect(uri, ({useNewUrlParser:true})).then(console.log("connected to MongoDB")).catch(err => console.log(err))
 
@@ -26,7 +26,7 @@ app.post('/emails', (req, res) => {
     const newEmailModel = new EmailModel({
         email: req.body.email,
     })
-    newEmailModel.save().then(res => res.json(res))
+    newEmailModel.save().then(res => console.log(res))
 })
 
 

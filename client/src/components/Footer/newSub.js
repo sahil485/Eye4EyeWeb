@@ -6,7 +6,9 @@ import axios from 'axios'
 const NewSub = () => {
 
     const [subEmail, setEmail] = useState("")
-    const addEmail = () => {
+    const addEmail = (event) => {
+        event.preventDefault();
+        
         console.log(subEmail)
         axios.post('http://localhost:5000/emails', {email: subEmail}).catch(err => console.log(err)).then("success")
         setEmail("")
