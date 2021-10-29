@@ -1,0 +1,14 @@
+POST http://localhost:5000/emails
+
+Content-Type: application/json
+{
+    "email": "sahilchatiwala@gmail.com"
+}
+
+###
+
+GET http://localhost:5000/emails
+
+###
+
+DELETE http://localhost:5000/emails/617b58b11aa6005fd815fdd9
