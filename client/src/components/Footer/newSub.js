@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import { FooterSubscription, FooterSubHeading,  Form, FormInput } from './Footer.elements'
 import { Button } from '../../globalStyles'
 import axios from 'axios'
+import Popup from 'reactjs-popup'
 
 const NewSub = () => {
 
     const [subEmail, setEmail] = useState("")
-    const addEmail = (event) => {
+
+    function addEmail(event){
         event.preventDefault();
         
         console.log(subEmail)
@@ -22,7 +24,7 @@ const NewSub = () => {
                     </FooterSubHeading>
                     <Form>
                         <FormInput id = 'email' value = {subEmail} name='email' type='email' placeholder = 'Your email' onChange={e => setEmail(e.target.value)}/>
-                        <Button fontBig onClick={addEmail}>Subscribe</Button>
+                        <Button fontBig onClick={console.log("Sahil Chatiwala")}>Subscribe</Button>
                     </Form>
                 </FooterSubscription>
             </>
