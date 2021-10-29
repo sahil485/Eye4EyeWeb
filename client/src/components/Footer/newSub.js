@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { FooterSubscription, FooterSubHeading,  Form, FormInput } from './Footer.elements'
 import { Button } from '../../globalStyles'
 import axios from 'axios'
-import Popup from 'reactjs-popup'
 
 const NewSub = () => {
 
@@ -10,9 +9,8 @@ const NewSub = () => {
 
     function addEmail(event){
         event.preventDefault();
-        
-        console.log(subEmail)
-        axios.post('http://localhost:5000/emails', {email: subEmail}).catch(err => console.log(err)).then("success")
+        axios.post('http://localhost:5000/emails', {email: subEmail}).catch(err => console.log(err)).then(console.log("successes"));
+        alert("You have been added/are already on the mailing list for upcoming products!")
         setEmail("")
     }
 
@@ -24,7 +22,7 @@ const NewSub = () => {
                     </FooterSubHeading>
                     <Form>
                         <FormInput id = 'email' value = {subEmail} name='email' type='email' placeholder = 'Your email' onChange={e => setEmail(e.target.value)}/>
-                        <Button fontBig onClick={console.log("Sahil Chatiwala")}>Subscribe</Button>
+                        <Button fontBig onClick={addEmail}>Subscribe</Button>
                     </Form>
                 </FooterSubscription>
             </>

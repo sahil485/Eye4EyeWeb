@@ -1,9 +1,10 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
-
+const bodyParser = require('body-parser')
 const app = express()
 
+app.use(bodyParser.json())
 app.use(express.json())
 app.use(cors())
 
@@ -19,7 +20,7 @@ const emailSchema = new mongoose.Schema({
 const EmailModel = mongoose.model('EmailSubscriptionList', emailSchema)
 
 app.get('/emails', (req, res) =>{
-    EmailModel.find().then(info => console.log(info)).catch(err => console.log(err))
+    EmailModel.find().catch(err => console.log(err)).then(info => console.log(info))
 })
 
 
@@ -32,12 +33,10 @@ app.post('/emails', (req, res) => {
                 email: req.body.email,
             })
             newEmailModel.save().catch(err => console.log(err)).then(res => console.log(res)).then(console.log("success"))
-            return(true)
         }
         else
         {
             console.log(`Email: ${req.body.email} alr exists ${res.length} times in database`)
-            return(false)
         }
 
     })
