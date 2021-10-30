@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import { InfoSec, InfoColumn, InfoRow, TextWrapper, TopLine, Heading, Subtitle, ImgWrapper, Img } from './InfoSection.elements';
 import { Container, Button } from '../../globalStyles';
 
-const InfoSection = ({ lightBg, imgStart, lightTopLine, lightTextDesc, buttonLabel, description, headline, lightText, topLine, primary, start, img, alt, to }) => {
+const InfoSection = ({ imgStart, lightTopLine, lightTextDesc, buttonLabel, description, headline, lightText, topLine, primary, start, img, alt, to }) => {
     return (
         <>
-            <InfoSec lightBg = {lightBg}>
+            <InfoSec>
                 <Container>
                     <InfoRow imgStart = {imgStart}>
                         <InfoColumn>

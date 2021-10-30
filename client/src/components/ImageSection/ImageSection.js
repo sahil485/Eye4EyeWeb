@@ -2,9 +2,9 @@ import React from 'react';
 import { Container } from '../../globalStyles';
 import { ImageSec, ImageColumn, ImageRow, ImgWrapper, Img } from './ImageSection.elements'
 
-export const ImageSection = ({lightBg, imgStart, start, img1, img2, img3, alt}) => {
+export const ImageSection = ({imgStart, start, img1, img2, img3, alt}) => {
     return (
-        <ImageSec lightBg = {lightBg}>
+        <ImageSec>
             <Container>
                 <ImageRow imgStart = {imgStart}>
                     <ImageColumn>
