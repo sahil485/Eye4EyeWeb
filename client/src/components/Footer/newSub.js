@@ -7,10 +7,18 @@ const NewSub = () => {
 
     const [subEmail, setEmail] = useState("")
 
-    function addEmail(event){
+    async function addEmail(event){
         event.preventDefault();
-        axios.post('http://localhost:5000/emails', {email: subEmail}).catch(err => console.log(err)).then(console.log("successes"));
-        alert("You have been added/are already on the mailing list for upcoming products!")
+        var getRes = await axios.post('http://localhost:5000/emails', {email: subEmail}).then(function(res){
+            return res.data.number
+        }).catch(err => console.log(err));
+        if(getRes == 1)
+        {
+            alert("Email successfully added to mailing list!")
+        }
+        else{
+            alert("Your email is already on the mailing list!")
+        }
         setEmail("")
     }
 
@@ -21,7 +29,7 @@ const NewSub = () => {
                         Enter your email to receive updates about new clothing releases!
                     </FooterSubHeading>
                     <Form>
-                        <FormInput id = 'email' value = {subEmail} name='email' type='email' placeholder = 'Your email' onChange={e => setEmail(e.target.value)}/>
+                        <FormInput id = 'email' autocomplete = "off" value = {subEmail} name='email' type='email' placeholder = 'Your email' onChange={e => setEmail(e.target.value)}/>
                         <Button fontBig onClick={addEmail}>Subscribe</Button>
                     </Form>
                 </FooterSubscription>

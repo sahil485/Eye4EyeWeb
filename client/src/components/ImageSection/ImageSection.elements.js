@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ImageSec = styled.div`
 color: #fff;
 padding: 60px 0;
-background: ${({ lightBg }) => (lightBg ? 'white' : '#101522')};
+background: ${({ lightBg }) => (lightBg ? 'DimGray' : '#101522')};
 
 `
 

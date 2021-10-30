@@ -1,15 +1,13 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
-const bodyParser = require('body-parser')
 const app = express()
 
-app.use(bodyParser.json())
 app.use(express.json())
 app.use(cors())
 
 
-const uri = "mongodb+srv://sillyhill:<password>@eye4eye.pt0wj.mongodb.net/emailList?retryWrites=true&w=majority"
+const uri = "mongodb+srv://<username>:<password>@eye4eye.pt0wj.mongodb.net/emailList?retryWrites=true&w=majority"
 
 mongoose.connect(uri, ({useNewUrlParser:true})).then(console.log("connected to MongoDB")).catch(err => console.log(err))
 
@@ -24,22 +22,24 @@ app.get('/emails', (req, res) =>{
 })
 
 
-app.post('/emails', (req, res) => {
-    EmailModel.find({email: req.body.email}, {_id: 1, email: 1}).then(res => {
+app.post('/emails', async (req, res) => {
+    var getNumber = await EmailModel.find({email: req.body.email}, {_id: 1, email: 1}).then(async(res) => {
         if(res.length<1)
         {
-            console.log("new email")
             const newEmailModel = new EmailModel({
                 email: req.body.email,
             })
-            newEmailModel.save().catch(err => console.log(err)).then(res => console.log(res)).then(console.log("success"))
+            const added = await newEmailModel.save().then(function(){return 1}).catch(err => console.log(err))
+            return added                                                               
         }
         else
         {
             console.log(`Email: ${req.body.email} alr exists ${res.length} times in database`)
+            return 0
         }
 
-    })
+    }).then(function(number){return number})
+    res.json({number: getNumber})
 })
 
 app.delete('/emails/:id', (req, res) => {
