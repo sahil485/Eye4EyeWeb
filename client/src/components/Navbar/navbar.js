@@ -5,7 +5,7 @@ import { Button } from '../../globalStyles';
 import { Nav, NavbarContainer, NavLogo, NavIcon, MobileIcon, NavMenu, NavItem, NavLinks, NavItemBtn, NavBtnLink } 
 from './navbar.elements';
 import Logo1 from '../../images/Svg/LogoSVG.svg';
-import Modal from '../Signup/Modal/modal';
+import Modal from './Modal/modal';
 
 const Navbar = () => {
     //useState is a hook created to create a class-less model
