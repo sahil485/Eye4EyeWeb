@@ -5,6 +5,7 @@ import { Button } from '../../globalStyles';
 import { Nav, NavbarContainer, NavLogo, NavIcon, MobileIcon, NavMenu, NavItem, NavLinks, NavItemBtn, NavBtnLink } 
 from './navbar.elements';
 import Logo1 from '../../images/Svg/LogoSVG.svg';
+import Modal from '../Signup/Modal/modal';
 
 const Navbar = () => {
     //useState is a hook created to create a class-less model
@@ -25,6 +26,7 @@ const Navbar = () => {
             setButton(true);
         }
     }
+    const [openModal, setOpenModal] = useState(false)
 
 //use effect runs after every render- alternative to componentDidMount/Update methods 
 
@@ -56,13 +58,13 @@ const Navbar = () => {
                             </NavItem>
 
                             <NavItem>
-                                <NavLinks to='/hoodies'>
+                                <NavLinks to='/Hoodies'>
                                     Hoodies
                                 </NavLinks>
                             </NavItem>
 
                             <NavItem>
-                                <NavLinks to='/tshirts'>
+                                <NavLinks to='/Tshirts'>
                                     T-Shirts
                                 </NavLinks>
                             </NavItem>
@@ -75,11 +77,12 @@ const Navbar = () => {
 
                             <NavItemBtn>
                                 {button ? (
-                                    <NavBtnLink to = '/sign-up'>
-                                        <Button primary>Sign Up</Button>
+                                    <NavBtnLink to = '/Register'>
+                                        <Button className = "" onClick={() => setOpenModal(true)} primary >Sign Up</Button>
+                                        {openModal && <Modal closeModal = {setOpenModal}/>}
                                     </NavBtnLink>
                                 ) : (
-                                    <NavBtnLink to='/sign-up'>
+                                    <NavBtnLink to='/Register'>
                                         <Button fontBig primary>
                                             Sign Up
                                         </Button>
