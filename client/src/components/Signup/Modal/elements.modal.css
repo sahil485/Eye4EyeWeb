@@ -1,3 +1,11 @@
+
+.fill-window {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
 .modalBackground {
     width: 100vw;
     height: 100vh;

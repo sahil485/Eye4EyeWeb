@@ -77,12 +77,12 @@ const Navbar = () => {
 
                             <NavItemBtn>
                                 {button ? (
-                                    <NavBtnLink to = '/Register'>
+                                    <NavBtnLink>
                                         <Button className = "" onClick={() => setOpenModal(true)} primary >Sign Up</Button>
                                         {openModal && <Modal closeModal = {setOpenModal}/>}
                                     </NavBtnLink>
                                 ) : (
-                                    <NavBtnLink to='/Register'>
+                                    <NavBtnLink>
                                         <Button fontBig primary>
                                             Sign Up
                                         </Button>
