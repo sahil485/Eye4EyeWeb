@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import GlobalStyle from './globalStyles';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Navbar, Footer } from './components';
+import { Navbar, Footer, ProductCard } from './components';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/HomePage/Home';
 import Hoodies from './pages/Hoodies/Hoodies';
 import Tshirts from './pages/T-Shirts/Tshirts';
 import { AppContext } from './Context';
 import axios from 'axios';
-import Button from './globalStyles'
+import Button from './globalStyles';
 
 function App() {
 
@@ -19,7 +19,8 @@ function App() {
     //provider gives a way to pass data to other sections without having to pass the props manually through the component tree
     //especially useful for applications where info has to be customized for users
     <div className="App">
-        <AppContext.Provider value = {user}>
+        <ProductCard/>
+        {/*<AppContext.Provider value = {user}>
           <Router>
             <GlobalStyle />
             <ScrollToTop />
@@ -31,7 +32,7 @@ function App() {
             </Switch>
             <Footer />
           </Router>
-        </AppContext.Provider>
+  </AppContext.Provider>*/}
     </div>
   );
 }
