@@ -19,7 +19,7 @@ function App() {
     //provider gives a way to pass data to other sections without having to pass the props manually through the component tree
     //especially useful for applications where info has to be customized for users
     <div className="App">
-        <ProductCard/>
+        <ProductCard />
         {/*<AppContext.Provider value = {user}>
           <Router>
             <GlobalStyle />
