@@ -2,26 +2,19 @@ import React from "react";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import { Button } from "../../../globalStyles"
-import CardActions from "@material-ui/core/CardActions";
+import { Button } from "../../../globalStyles";
 
-const ProductCard = () => {
+const ProductCard = (props) => {
     return (
         <>
             <div style={{}}>
             <Card variant = "outlined"
                 style={{
                 width: 400,
-                backgroundColor: "beige",
+                backgroundColor: "green"
                 }}
             >
-                <CardContent>   
-                    <CardMedia
-                        component="img"
-                        height="194"
-                        image="./images/im.jpg"
-                        alt="Paella dish"
-                    />
+                <center><CardContent>   
                     <Typography
                         style={{ fontSize: 14 }}
                         color="textSecondary"
@@ -32,6 +25,7 @@ const ProductCard = () => {
                     <Typography variant="h5" component="h2">
                         How are you ?
                     </Typography>
+                    <img src={props.link}/>
                     <Typography
                         style={{
                         marginBottom: 12,
@@ -43,10 +37,8 @@ const ProductCard = () => {
                     <Typography variant="body2" component="p">
                         Stay Happy
                     </Typography>
-                </CardContent>
-                <CardActions>
-                    <Button size="small">Purchase</Button>
-                </CardActions>
+                    <Button>Purchase</Button>
+                </CardContent></center>
             </Card>
             </div>
         </>

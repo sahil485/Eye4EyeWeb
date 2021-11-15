@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from '../../globalStyles';
 import { ImageSec, ImageColumn, ImageRow, ImgWrapper, Img } from './ImageSection.elements'
+import ProductCard from './ProductCards/ProductCard'
 
 export const ImageSection = ({imgStart, start, img1, img2, img3, alt}) => {
     return (
@@ -8,14 +9,13 @@ export const ImageSection = ({imgStart, start, img1, img2, img3, alt}) => {
             <Container>
                 <ImageRow imgStart = {imgStart}>
                     <ImageColumn>
-                        <ImgWrapper start = {start}>
-                            <Img src= {img1} alt={alt}/>
-                        </ImgWrapper>
+                        <ProductCard link = {require('../../images/Svg/Jenny.svg').default}/>
                     </ImageColumn>
                     <ImageColumn>
-                        <ImgWrapper start = {start}>
+                        <ProductCard link = {require('../../images/Svg/Choi.svg').default}/>
+                        {/*<ImgWrapper start = {start}>
                             <Img src= {img2} alt={alt}/>
-                        </ImgWrapper>
+                        </ImgWrapper>*/}
                     </ImageColumn>
                     <ImageColumn>
                         <ImgWrapper start = {start}>
