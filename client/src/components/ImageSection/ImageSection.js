@@ -9,18 +9,19 @@ export const ImageSection = ({imgStart, start, img1, img2, img3, alt}) => {
             <Container>
                 <ImageRow imgStart = {imgStart}>
                     <ImageColumn>
-                        <ProductCard link = {require('../../images/Svg/Jenny.svg').default}/>
+                        <ProductCard link = {img1}/>
                     </ImageColumn>
                     <ImageColumn>
-                        <ProductCard link = {require('../../images/Svg/Choi.svg').default}/>
+                        <ProductCard link = {img2}/>
                         {/*<ImgWrapper start = {start}>
                             <Img src= {img2} alt={alt}/>
                         </ImgWrapper>*/}
                     </ImageColumn>
                     <ImageColumn>
-                        <ImgWrapper start = {start}>
+                        <ProductCard link = {img3}/>
+                        {/*<ImgWrapper start = {start}>
                             <Img src= {img3} alt={alt}/>
-                        </ImgWrapper>
+                    </ImgWrapper>*/}
                     </ImageColumn>
                 </ImageRow>
             </Container>    

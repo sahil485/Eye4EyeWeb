@@ -3,6 +3,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import { Button } from "../../../globalStyles";
+import "./styles.css"
 
 const ProductCard = (props) => {
     return (
@@ -20,22 +21,22 @@ const ProductCard = (props) => {
                         color="textSecondary"
                         gutterBottom
                     >
-                        Greetings of the day
+                        Type of Clothing
                     </Typography>
                     <Typography variant="h5" component="h2">
-                        How are you ?
+                        Name
                     </Typography>
-                    <img src={props.link}/>
+                    <img className = "photo" src={props.link}/>
                     <Typography
                         style={{
                         marginBottom: 12,
                         }}
                         color="textSecondary"
                     >
-                        Keep Motivated
+                        Sizes Selection
                     </Typography>
                     <Typography variant="body2" component="p">
-                        Stay Happy
+                        Price
                     </Typography>
                     <Button>Purchase</Button>
                 </CardContent></center>
