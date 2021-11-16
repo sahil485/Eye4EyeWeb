@@ -9,16 +9,16 @@ export const ImageSection = ({imgStart, start, img1, img2, img3, alt}) => {
             <Container>
                 <ImageRow imgStart = {imgStart}>
                     <ImageColumn>
-                        <ProductCard link = {img1}/>
+                        <ProductCard link = {img1} price={"$35.00"} name={"Midnight Blue and Purple"}/>
                     </ImageColumn>
                     <ImageColumn>
-                        <ProductCard link = {img2}/>
+                        <ProductCard link = {img2} price={"$35.00"} name={"White and Red"}/>
                         {/*<ImgWrapper start = {start}>
                             <Img src= {img2} alt={alt}/>
                         </ImgWrapper>*/}
                     </ImageColumn>
                     <ImageColumn>
-                        <ProductCard link = {img3}/>
+                        <ProductCard link = {img3} price={"$35.00"} name={"Forest Green"}/>
                         {/*<ImgWrapper start = {start}>
                             <Img src= {img3} alt={alt}/>
                     </ImgWrapper>*/}

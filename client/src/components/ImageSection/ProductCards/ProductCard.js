@@ -4,6 +4,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import { Button } from "../../../globalStyles";
 import "./styles.css"
+import { CardHeader } from "@material-ui/core";
 
 const ProductCard = (props) => {
     return (
@@ -21,10 +22,10 @@ const ProductCard = (props) => {
                         color="textSecondary"
                         gutterBottom
                     >
-                        Type of Clothing
+                    
                     </Typography>
                     <Typography variant="h5" component="h2">
-                        Name
+                        {props.name}
                     </Typography>
                     <img className = "photo" src={props.link}/>
                     <Typography
@@ -33,12 +34,12 @@ const ProductCard = (props) => {
                         }}
                         color="textSecondary"
                     >
-                        Sizes Selection
+                        {props.sizes}
                     </Typography>
                     <Typography variant="body2" component="p">
-                        Price
+                        {props.price}
                     </Typography>
-                    <Button>Purchase</Button>
+                    <Button>Add to Cart</Button>
                 </CardContent></center>
             </Card>
             </div>

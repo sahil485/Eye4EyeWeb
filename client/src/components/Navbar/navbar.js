@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaShoppingCart } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import { Button } from '../../globalStyles';
 import { Nav, NavbarContainer, NavLogo, NavIcon, MobileIcon, NavMenu, NavItem, NavLinks, NavItemBtn, NavBtnLink } 
@@ -68,17 +68,11 @@ const Navbar = () => {
                                     T-Shirts
                                 </NavLinks>
                             </NavItem>
-                            
-                            <NavItem>
-                                <NavLinks to='/'>
-                                    Cart
-                                </NavLinks>
-                            </NavItem>
 
                             <NavItemBtn>
                                 {button ? (
                                     <NavBtnLink>
-                                        <Button className = "" onClick={() => setOpenModal(true)} primary >Sign Up</Button>
+                                        <Button className = "" onClick={() => setOpenModal(true)}>Sign Up</Button>
                                         {openModal && <Modal closeModal = {setOpenModal}/>}
                                     </NavBtnLink>
                                 ) : (
@@ -89,6 +83,13 @@ const Navbar = () => {
                                     </NavBtnLink>
                                 )}
                             </NavItemBtn>
+
+                            <NavItem>
+                                <NavLinks to='/'>
+                                    <FaShoppingCart onClick={() => setOpenModal(true)}/>
+                                    {openModal && <Modal closeModal = {setOpenModal}/>}
+                                </NavLinks>
+                            </NavItem>
                         </NavMenu>
 
                     </NavbarContainer>
