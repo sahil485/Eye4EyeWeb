@@ -71,7 +71,7 @@ const Navbar = () => {
                             
                             <NavItem>
                                 <NavLinks to='/'>
-                                    About Us
+                                    Cart
                                 </NavLinks>
                             </NavItem>
 

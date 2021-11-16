@@ -60,9 +60,9 @@ export const imObjTwo = {
     lightBg: true, 
     imgStart: 'start', 
     start: true, 
-    img1: require('../images/Png/Sweatshirt1.png').default,
-    img2: require('../images/Png/Sweatshirt2.png').default,
-    img3: require('../images/Png/Sweatshirt3.png').default, 
+    img1: require('../images/Png/Sweatshirts/1OF3Front.png').default,
+    img2: require('../images/Png/Sweatshirts/2OF3Front.png').default,
+    img3: require('../images/Png/Sweatshirts/3OF3Front.png').default, 
     alt: 'Image'
 }
 
