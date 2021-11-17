@@ -1,4 +1,4 @@
 # Eye4EyeWeb
 Website for clothing brand Eye4Eye
 
-Product card github repo: github.com:nukeop/react-ui-cards.git
+Image Slider component: git@github.com:DZuz14/react-hooks-image-slider.git
