@@ -19,7 +19,23 @@ function App() {
         switch(actionType)
         {
             case "ADD":
-              setItems([...items, item])
+
+              {/*let contains = items.filter(inside => inside.name === item.name)
+              console.log(contains)
+              if(contains.length == 0)
+              {
+                console.log("here")
+                items[contains].quantity += 1;
+                setItems([...items])
+              }
+              else
+              {
+                console.log("there")
+                setItems([...items, item])
+              }
+
+            items.forEach(e => console.log(e.name + " " + e.quantity))*/}
+            setItems([...items, item])
               return
             case "DELETE":
               return
