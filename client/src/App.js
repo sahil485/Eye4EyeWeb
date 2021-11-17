@@ -12,14 +12,26 @@ import Button from './globalStyles';
 
 function App() {
 
-  const [user, setUser] = useState("")
-  const [openModal, setOpenModal] = useState(false)
+  const[items, setItems] = useState([]);
+
+  function dispatchCartActions(item, actionType)
+    {
+        switch(actionType)
+        {
+            case "ADD":
+              setItems([...items, item])
+              return
+            case "DELETE":
+              return
+        }
+    }
+
 
   return (
     //provider gives a way to pass data to other sections without having to pass the props manually through the component tree
     //especially useful for applications where info has to be customized for users
     <div className="App">
-        <AppContext.Provider value = {user}>
+        <AppContext.Provider value = {{items, dispatchCartActions}}>
           <Router>
             <GlobalStyle />
             <ScrollToTop />

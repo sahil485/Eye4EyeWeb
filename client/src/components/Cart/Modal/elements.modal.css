@@ -76,3 +76,8 @@
   #cancelBtn {
     background-color: crimson;
   }
+
+  .container{
+    max-height: 80%;
+    overflow: scroll
+  }
