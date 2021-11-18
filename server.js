@@ -6,12 +6,12 @@ const path = require("path")
 
 require("dotenv").config()
 
-const port = process.env.PORT || 5000;
-
 app.use(express.json())
 app.use(cors())
 
 app.use(express.static(path.join(__dirname, "client", "build")))
+
+
 
 mongoose.connect(process.env.MONGODB_URI, ({useNewUrlParser:true})).then(console.log("connected to MongoDB")).catch(err => console.log(err))
 
@@ -54,4 +54,4 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
-app.listen(port, ()=>{console.log("Server is running at port 5000")})
+app.listen(process.env.PORT, ()=>{console.log("Server is running at port 5000")})
