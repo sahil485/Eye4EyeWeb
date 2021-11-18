@@ -7,11 +7,11 @@ export const ItemList = () => {
 
     const { items }  = useContext(AppContext)
 
+    const nonZeroes = items.filter(item => item.quantity > 0)
     return (
         <>
             <div className = "container">
-
-                {items.map(item => <Item name = {item.name}/>)}
+                {nonZeroes.map(item => (<Item name = {item.name} id = {item.id} num = {item.quantity}/>))}
             </div>
         </>
     )

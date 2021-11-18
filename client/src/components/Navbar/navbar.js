@@ -29,8 +29,6 @@ const Navbar = () => {
     }
     const [openModal, setOpenModal] = useState(false)
 
-
-    
 //use effect runs after every render- alternative to componentDidMount/Update methods 
 
     useEffect(() => {

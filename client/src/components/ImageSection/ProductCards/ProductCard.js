@@ -10,10 +10,11 @@ import { CardHeader } from "@material-ui/core";
 const ProductCard = (props) => {
 
     const { dispatchCartActions } = useContext(AppContext);
+    
 
     const handleAddToCart = () =>
     {
-        dispatchCartActions({name: props.name, quantity: 1}, "ADD")
+        dispatchCartActions({name: props.name, quantity: 1}, "ADD", 1)
     }
 
     return (

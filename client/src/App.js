@@ -12,31 +12,43 @@ import Button from './globalStyles';
 
 function App() {
 
-  const[items, setItems] = useState([]);
+  const[items, setItems] = useState([
+    {name: "Midnight Blue and Purple",  quantity: 0, id : 1},
+    {name: "White and Red", quantity: 0, id: 2},
+    {name: "Forest Green", quantity: 0, id : 3}
+  ]);
 
-  function dispatchCartActions(item, actionType)
+  function dispatchCartActions(item, actionType, num)
     {
         switch(actionType)
         {
             case "ADD":
 
-              {/*let contains = items.filter(inside => inside.name === item.name)
-              console.log(contains)
-              if(contains.length == 0)
+              const contains = items.filter(inside => inside.name === item.name)
+
+              const itemName = contains[0].name;
+
+              if(itemName === items[0].name && items[0].quantity < 5)
               {
-                console.log("here")
-                items[contains].quantity += 1;
-                setItems([...items])
+                items[0].quantity++;
               }
-              else
+              else if(itemName === items[1].name &&  items[1].quantity < 5)
               {
-                console.log("there")
-                setItems([...items, item])
+                items[1].quantity++;
+              }
+              else if(itemName === items[2].name && items[2].quantity < 5)
+              {
+                items[2].quantity++;
               }
 
-            items.forEach(e => console.log(e.name + " " + e.quantity))*/}
-            setItems([...items, item])
               return
+            
+            case "INCREMENT":
+            
+              items[item-1].quantity = num;
+              
+              return
+
             case "DELETE":
               return
         }
@@ -55,7 +67,7 @@ function App() {
             <Switch>
               <Route path='/' exact component={Home}/>
               <Route path='/Hoodies' exact component={Hoodies}/>
-              <Route path='/Tshirts' exact component={Tshirts}/>
+              {/*<Route path='/Tshirts' exact component={Tshirts}/>*/}
             </Switch>
             <Footer />
           </Router>

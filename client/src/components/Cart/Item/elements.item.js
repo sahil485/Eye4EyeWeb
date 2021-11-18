@@ -15,8 +15,6 @@ max-width: 33%;
 flex-basis: 50%;
 
 @media screen and (max-width: 768px){
-    max-width: 100%;
-    flex-basis: 100%;
     display: flex;
     justify-content: center;
 }
@@ -25,9 +23,40 @@ flex-basis: 50%;
 
 export const Img = styled.img`
 max-width: 100%;
-height: 70px;
-width: 70px;
+height: 120px;
+width: 120px;
 vertical-align: middle;
 display: inline-block;
-max-height: 70px;
 `;
+
+export const InfoCont = styled.div`
+flex: 1;
+max-width: 67%;
+flex-basis: 50;
+@media screen and (max-width: 768px){
+    display: flex;
+    justify-content: center;
+}
+`
+
+export const InfoRow = styled.div`
+text-align: left;
+width: 100%;
+height: 20%;
+`
+
+export const Dec = styled.button`
+height: auto; 
+border-color: red;
+border-radius: 30px;
+cursor: pointer;
+background-color: red;
+`
+
+export const Inc = styled.button`
+height: auto; 
+border-color: green;
+border-radius: 30px;
+cursor: pointer;
+background-color: green;
+`
