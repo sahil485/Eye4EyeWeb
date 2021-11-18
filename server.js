@@ -13,7 +13,9 @@ app.use(cors())
 
 app.use(express.static(path.join(__dirname, "client", "build")))
 
-mongoose.connect(process.env.MONGODB_URI, ({useNewUrlParser:true})).then(console.log("connected to MongoDB")).catch(err => console.log(err))
+const uri = process.env.MONGODB_URI || "mongodb+srv://sillyhill:pgxtpp5k@eye4eye.pt0wj.mongodb.net/emailList?retryWrites=true&w=majority"
+
+mongoose.connect(uri, ({useNewUrlParser:true})).then(console.log("connected to MongoDB")).catch(err => console.log(err))
 
 const emailSchema = new mongoose.Schema({
     email: String
