@@ -9,9 +9,13 @@ import Tshirts from './pages/T-Shirts/Tshirts';
 import { AppContext } from './Context';
 import axios from 'axios';
 import Button from './globalStyles';
+import { Elements } from '@stripe/react-stripe-js'
+import { loadStripe } from '@stripe/stripe-js'
 
-function App() {
+const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
+function App() 
+{
   const[items, setItems] = useState([
     {name: "Midnight Blue and Purple",  quantity: 0, id : 1},
     {name: "White and Red", quantity: 0, id: 2},
@@ -40,6 +44,8 @@ function App() {
               {
                 items[2].quantity++;
               }
+
+              alert("1 " + itemName + " sweatshirt added to cart!");
 
               return
             
