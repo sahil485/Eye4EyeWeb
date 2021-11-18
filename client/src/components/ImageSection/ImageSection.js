@@ -12,7 +12,7 @@ export const ImageSection = ({imgStart, start, img1, img2, img3, alt}) => {
                         <ProductCard link = {img1} price={"$35.00"} name={"Midnight Blue and Purple"}/>
                     </ImageColumn>
                     <ImageColumn>
-                        <ProductCard link = {img2} price={"$35.00"} name={"White and Red"}/>
+                        <ProductCard  link = {img2} price={"$35.00"} name={"White and Red"}/>
                         {/*<ImgWrapper start = {start}>
                             <Img src= {img2} alt={alt}/>
                         </ImgWrapper>*/}

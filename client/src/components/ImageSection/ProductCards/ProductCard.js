@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import { Button } from "../../../globalStyles";
 import "./styles.css"
+import { AppContext } from "../../../Context";
 import { CardHeader } from "@material-ui/core";
 
 const ProductCard = (props) => {
+
+    const { dispatchCartActions } = useContext(AppContext);
+    
+
+    const handleAddToCart = () =>
+    {
+        dispatchCartActions({name: props.name, quantity: 1}, "ADD", 1)
+    }
+
     return (
         <>
             <div style={{}}>
@@ -39,7 +49,7 @@ const ProductCard = (props) => {
                     <Typography variant="body2" component="p">
                         {props.price}
                     </Typography>
-                    <Button>Add to Cart</Button>
+                    <Button onClick={handleAddToCart}>Add to Cart</Button>
                 </CardContent></center>
             </Card>
             </div>

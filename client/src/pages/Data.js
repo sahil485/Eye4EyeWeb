@@ -50,9 +50,9 @@ export const imObjOne = {
     lightBg: true, 
     imgStart: 'start', 
     start: true, 
-    img1: require('../images/Png/Founder1.jpg').default,
-    img2: require('../images/Png/Eye4Eye.PNG').default,
-    img3: require('../images/Png/Founder2.PNG').default, 
+    img1: require('../images/Png/Sweatshirts/1OF3Front.png').default,
+    img2: require('../images/Png/Sweatshirts/2OF3Front.png').default,
+    img3: require('../images/Png/Sweatshirts/3OF3Front.png').default, 
     alt: 'Image'
 }
 

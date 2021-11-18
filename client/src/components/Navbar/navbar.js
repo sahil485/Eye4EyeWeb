@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { FaBars, FaTimes, FaShoppingCart } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import { Button } from '../../globalStyles';
+import { AppContext } from '../../Context';
 import { Nav, NavbarContainer, NavLogo, NavIcon, MobileIcon, NavMenu, NavItem, NavLinks, NavItemBtn, NavBtnLink } 
 from './navbar.elements';
 import Logo1 from '../../images/Svg/LogoSVG.svg';
-import Modal from './Modal/modal';
+import Modal from '../Cart/Modal/modal';
 
 const Navbar = () => {
     //useState is a hook created to create a class-less model
@@ -38,63 +39,42 @@ const Navbar = () => {
 
     return (
         <>
-            <IconContext.Provider value={{color : 'black'}}>
-                <Nav>
-                    <NavbarContainer>
-                        <NavLogo to="/" onClick={closeMobileMenu}>
-                            <img src={Logo1} />
-                            EYE4EYE
-                        </NavLogo>
-                        <MobileIcon onClick={handleClick}>    
-                            {click ? <FaTimes /> : <FaBars />}
-                        </MobileIcon>
+                <IconContext.Provider value={{color : 'black'}}>
+                    <Nav>
+                        <NavbarContainer>
+                            <NavLogo to="/" onClick={closeMobileMenu}>
+                                <img src={Logo1} />
+                                EYE4EYE
+                            </NavLogo>
+                            <MobileIcon onClick={handleClick}>    
+                                {click ? <FaTimes /> : <FaBars />}
+                            </MobileIcon>
 
-                        <NavMenu onClick={handleClick} click={click}>
+                            <NavMenu onClick={handleClick} click={click}>
 
-                            <NavItem>
-                                <NavLinks to='/'>
-                                    Home
-                                </NavLinks>
-                            </NavItem>
+                                <NavItem>
+                                    <NavLinks to='/'>
+                                        Home
+                                    </NavLinks>
+                                </NavItem>
 
-                            <NavItem>
-                                <NavLinks to='/Hoodies'>
-                                    Hoodies
-                                </NavLinks>
-                            </NavItem>
+                                <NavItem>
+                                    <NavLinks to='/Hoodies'>
+                                        Hoodies
+                                    </NavLinks>
+                                </NavItem>
 
-                            <NavItem>
-                                <NavLinks to='/Tshirts'>
-                                    T-Shirts
-                                </NavLinks>
-                            </NavItem>
-
-                            <NavItemBtn>
-                                {button ? (
-                                    <NavBtnLink>
-                                        <Button className = "" onClick={() => setOpenModal(true)}>Sign Up</Button>
+                                <NavItem>
+                                    <NavLinks to='/'>
+                                        <FaShoppingCart onClick={() => setOpenModal(true)}/>
                                         {openModal && <Modal closeModal = {setOpenModal}/>}
-                                    </NavBtnLink>
-                                ) : (
-                                    <NavBtnLink>
-                                        <Button fontBig primary>
-                                            Sign Up
-                                        </Button>
-                                    </NavBtnLink>
-                                )}
-                            </NavItemBtn>
+                                    </NavLinks>
+                                </NavItem>
+                            </NavMenu>
 
-                            <NavItem>
-                                <NavLinks to='/'>
-                                    <FaShoppingCart onClick={() => setOpenModal(true)}/>
-                                    {openModal && <Modal closeModal = {setOpenModal}/>}
-                                </NavLinks>
-                            </NavItem>
-                        </NavMenu>
-
-                    </NavbarContainer>
-                </Nav>
-            </IconContext.Provider>
+                        </NavbarContainer>
+                    </Nav>
+                </IconContext.Provider>
         </>
     );
 };
