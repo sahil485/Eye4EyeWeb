@@ -9,7 +9,7 @@ import Tshirts from './pages/T-Shirts/Tshirts';
 import { AppContext } from './Context';
 import axios from 'axios';
 import Button from './globalStyles';
-import { Payment } from './components/Payment/Payment'
+import ImageSlider from './components/ImageSlider/ImageSlider';
 
 function App() 
 {
@@ -42,7 +42,7 @@ function App()
                 items[2].quantity++;
               }
 
-              alert("1 " + itemName + " sweatshirt added to cart!");
+              alert("1 " + itemName + " sweatshirt added to cart.")
 
               return
             
@@ -63,18 +63,19 @@ function App()
     //especially useful for applications where info has to be customized for users
     <div className="App">
         <AppContext.Provider value = {{items, dispatchCartActions}}>
-          <Payment/>
-          {/*<Router>
+          {/*<Payment/>*/}
+          <Router>
             <GlobalStyle />
             <ScrollToTop />
             <Navbar />
+            <ImageSlider />
             <Switch>
               <Route path='/' exact component={Home}/>
               <Route path='/Hoodies' exact component={Hoodies}/>
-              <Route path='/Tshirts' exact component={Tshirts}/>
+              {/*<Route path='/Tshirts' exact component={Tshirts}/>*/}
             </Switch>
             <Footer />
-          </Router>*/}
+          </Router>
       </AppContext.Provider>
 
     </div>

@@ -5,7 +5,6 @@ import Typography from "@material-ui/core/Typography";
 import { Button } from "../../../globalStyles";
 import "./styles.css"
 import { AppContext } from "../../../Context";
-import { CardHeader } from "@material-ui/core";
 
 const ProductCard = (props) => {
 
@@ -23,7 +22,7 @@ const ProductCard = (props) => {
             <Card variant = "outlined"
                 style={{
                 width: 400,
-                backgroundColor: "green"
+                backgroundColor: "white"
                 }}
             >
                 <center><CardContent>   

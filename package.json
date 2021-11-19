@@ -24,7 +24,9 @@
     "mongoose": "^6.0.4",
     "nodemon": "^2.0.12",
     "path": "^0.12.7",
-    "react-stripe-checkout": "^2.6.3"
+    "react-animated-slider": "^2.0.0",
+    "react-stripe-checkout": "^2.6.3",
+    "react-toastify": "^8.1.0"
   },
   "engines": {
     "node": "14.17.5"
