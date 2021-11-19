@@ -9,17 +9,14 @@ import Tshirts from './pages/T-Shirts/Tshirts';
 import { AppContext } from './Context';
 import axios from 'axios';
 import Button from './globalStyles';
-import { Elements } from '@stripe/react-stripe-js'
-import { loadStripe } from '@stripe/stripe-js'
-
-const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+import { Payment } from './components/Payment/Payment'
 
 function App() 
 {
   const[items, setItems] = useState([
-    {name: "Midnight Blue and Purple",  quantity: 0, id : 1},
-    {name: "White and Red", quantity: 0, id: 2},
-    {name: "Forest Green", quantity: 0, id : 3}
+    {name: "Midnight Blue and Purple",  quantity: 0, id : 1, price: 35},
+    {name: "White and Red", quantity: 0, id: 2, price: 35},
+    {name: "Forest Green", quantity: 0, id : 3, price: 35}
   ]);
 
   function dispatchCartActions(item, actionType, num)
@@ -66,18 +63,20 @@ function App()
     //especially useful for applications where info has to be customized for users
     <div className="App">
         <AppContext.Provider value = {{items, dispatchCartActions}}>
-          <Router>
+          <Payment/>
+          {/*<Router>
             <GlobalStyle />
             <ScrollToTop />
             <Navbar />
             <Switch>
               <Route path='/' exact component={Home}/>
               <Route path='/Hoodies' exact component={Hoodies}/>
-              {/*<Route path='/Tshirts' exact component={Tshirts}/>*/}
+              <Route path='/Tshirts' exact component={Tshirts}/>
             </Switch>
             <Footer />
-          </Router>
-        </AppContext.Provider>
+          </Router>*/}
+      </AppContext.Provider>
+
     </div>
   );
 }

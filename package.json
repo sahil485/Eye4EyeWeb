@@ -23,7 +23,8 @@
     "express": "^4.17.1",
     "mongoose": "^6.0.4",
     "nodemon": "^2.0.12",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react-stripe-checkout": "^2.6.3"
   },
   "engines": {
     "node": "14.17.5"
