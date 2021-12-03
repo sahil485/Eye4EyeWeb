@@ -1,30 +1,41 @@
-import React from 'react'
-import Slider from 'react-animated-slider'
-import slider from 'react-animated-slider/build/horizontal.css';
-import tshirt from '../ImageSlider/Png/tshirt.jpg'
-import f1 from '../ImageSlider/Png/Founder1.jpg'
-import f2 from '../ImageSlider/Png/Founder2.PNG'
-import p from '../ImageSlider/Png/placeholder.jpg'
-import f13 from '../ImageSlider/Png/Sweatshirts/1OF3Front.png'
-import b13 from '../ImageSlider/Png/Sweatshirts/1OF3Back.png'
-import f23 from '../ImageSlider/Png/Sweatshirts/2OF3Front.png'
-import b23 from '../ImageSlider/Png/Sweatshirts/2OF3Back.png'
+import React, { useState } from 'react';
+import { SliderData } from './SliderData';
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 
-const ImageSlider = () =>
-{
+const ImageSlider = ({ slides }) => {
+  const [current, setCurrent] = useState(0);
+  const length = slides.length;
 
-    const slides = [tshirt, f1, f2, p, f13, b13, f23, b23]
-    return(
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  };
 
-            <Slider classNames={slider}>
-            {slides.map(item => (
-                <div
-                    style={{ background: `url('https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg') no-repeat center center` }}
-                >   
-                </div>
-            ))}
-            </Slider>
-    );
-}
+  const prevSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  };
+
+  if (!Array.isArray(slides) || slides.length <= 0) {
+    return null;
+  }
+
+  return (
+    <section className='slider'>
+      <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide} />
+      <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide} />
+      {SliderData.map((slide, index) => {
+        return (
+          <div
+            className={index === current ? 'slide active' : 'slide'}
+            key={index}
+          >
+            {index === current && (
+              <img src={slide.image} alt='travel image' className='image' />
+            )}
+          </div>
+        );
+      })}
+    </section>
+  );
+};
 
 export default ImageSlider;

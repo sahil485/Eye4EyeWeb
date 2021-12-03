@@ -9,7 +9,6 @@ import Tshirts from './pages/T-Shirts/Tshirts';
 import { AppContext } from './Context';
 import axios from 'axios';
 import Button from './globalStyles';
-import ImageSlider from './components/ImageSlider/ImageSlider';
 
 function App() 
 {
@@ -68,7 +67,6 @@ function App()
             <GlobalStyle />
             <ScrollToTop />
             <Navbar />
-            <ImageSlider />
             <Switch>
               <Route path='/' exact component={Home}/>
               <Route path='/Hoodies' exact component={Hoodies}/>
