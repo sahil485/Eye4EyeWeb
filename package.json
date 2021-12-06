@@ -26,6 +26,7 @@
     "path": "^0.12.7",
     "react-animated-slider": "^2.0.0",
     "react-responsive-carousel": "^3.2.22",
+    "react-simple-image-slider": "^2.3.0",
     "react-stripe-checkout": "^2.6.3",
     "react-toastify": "^8.1.0"
   },
