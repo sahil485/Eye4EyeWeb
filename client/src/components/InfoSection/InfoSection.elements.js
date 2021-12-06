@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const InfoSec = styled.div`
 padding: 160px 0;
 background: #ffb3de;
-
 `
 
 export const InfoRow = styled.div`
@@ -66,16 +65,17 @@ color: ${({lightTextDesc}) => (lightTextDesc ? '#a9b3c1' : '#1c2237')};
 `
 
 export const ImgWrapper = styled.div`
-max-width: 555px;
-display: flex;
+max-width: 100px;
+display: block;  
 justify-content: ${({ start }) => (start ? 'flex-start' : 'flex-end')};
+object-fit: scale-down;
 `
 
 export const Img = styled.img`
 padding-right: 0;
 border: 0;
 max-width: 100%;
+max-height: 100%;
 vertical-align: middle;
-display: inline-block;
-max-height: 500px;
+object-fit: scale-down;
 `;
