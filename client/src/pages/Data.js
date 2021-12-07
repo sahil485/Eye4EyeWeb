@@ -3,15 +3,20 @@ export const infoObjOne = {
     lightTopLine: true, 
     lightText : true, 
     lightTextDesc: true, 
-    buttonLabel: 'View Clothing', 
+    //buttonLabel: 'View Clothing', 
     description : 'We sell authentic, handmade hoodies and t-shirts', 
     headline: 'EYE 4 EYE', 
     topLine: 'Clothing Brand', 
     primary: true,
-    img: require('../images/Png/Eye4Eye.PNG').default,
     alt: 'Image',
     start: '',
-    to: '/'
+    to: '/',
+    images: [
+        {url: require('../images/SliderIms/Eye4Eye.PNG').default},
+        {url: require('../images/SliderIms/1.JPG').default},
+        {url: require('../images/SliderIms/7.JPG').default},
+        {url: require('../images/SliderIms/6.JPG').default}
+      ]
 };
 
 export const infoObjTwo = {
@@ -24,10 +29,15 @@ export const infoObjTwo = {
     headline: 'Hoodies', 
     topLine: '', 
     primary: true,
-    img: require('../images/Png/Founder2.PNG').default,
     alt: 'Image',
     start: '',
-    to: '/hoodies'
+    to: '/hoodies',
+    images: [        
+        {url: require('../images/SliderIms/2.JPG').default},
+        {url: require('../images/SliderIms/3.JPG').default},
+        {url: require('../images/SliderIms/5.JPG').default},
+        {url: require('../images/SliderIms/4.JPG').default}
+      ]
 };
 
 export const infoObjThree = {
@@ -40,7 +50,6 @@ export const infoObjThree = {
     headline: 'T-Shirts', 
     topLine: '', 
     primary: false,
-    img: require('../images/Png/Founder1.jpg').default,
     alt: 'Image',
     start: true,
     to: '/tshirts'
