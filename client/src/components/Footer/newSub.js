@@ -4,7 +4,7 @@ import { Button } from '../../globalStyles'
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'http://eye4eyeweb.herokuapp.com',
+    baseURL: 'https://eye4eyeweb.herokuapp.com',
   });
 
 const NewSub = () => {
