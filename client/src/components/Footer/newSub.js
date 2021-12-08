@@ -3,13 +3,17 @@ import { FooterSubscription, FooterSubHeading,  Form, FormInput } from './Footer
 import { Button } from '../../globalStyles'
 import axios from 'axios'
 
+const api = axios.create({
+    baseURL: 'http://eye4eyeweb.herokuapp.com',
+  });
+
 const NewSub = () => {
 
     const [subEmail, setEmail] = useState("")
 
     async function addEmail(event){
         event.preventDefault();
-        var getRes = await axios.post(process.env.POST, {email: subEmail}).then(function(res){
+        var getRes = await api.post('/emails', {email: subEmail}).then(function(res){
             return res.data.number
         }).catch(err => console.log(err));
         if(getRes == 1)
