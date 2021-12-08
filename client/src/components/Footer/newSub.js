@@ -9,7 +9,7 @@ const NewSub = () => {
 
     async function addEmail(event){
         event.preventDefault();
-        var getRes = await axios.post('http://localhost:5000/emails', {email: subEmail}).then(function(res){
+        var getRes = await axios.post(process.env.POST, {email: subEmail}).then(function(res){
             return res.data.number
         }).catch(err => console.log(err));
         if(getRes == 1)
