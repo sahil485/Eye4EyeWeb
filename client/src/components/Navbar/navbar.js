@@ -65,10 +65,7 @@ const Navbar = () => {
                                 </NavItem>
 
                                 <NavItem>
-                                    <NavLinks to='/'>
-                                        <FaShoppingCart onClick={() => setOpenModal(true)}/>
-                                        {openModal && <Modal closeModal = {setOpenModal}/>}
-                                    </NavLinks>
+                                    
                                 </NavItem>
                             </NavMenu>
 
