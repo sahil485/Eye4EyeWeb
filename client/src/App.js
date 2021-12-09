@@ -5,10 +5,8 @@ import { Navbar, Footer, ProductCard } from './components';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/HomePage/Home';
 import Hoodies from './pages/Hoodies/Hoodies';
-import Tshirts from './pages/T-Shirts/Tshirts';
+import Cart from './pages/Checkout/Cart'
 import { AppContext } from './Context';
-import axios from 'axios';
-import Button from './globalStyles';
 
 function App() 
 {
@@ -70,7 +68,7 @@ function App()
             <Switch>
               <Route path='/' exact component={Home}/>
               <Route path='/Hoodies' exact component={Hoodies}/>
-              {/*<Route path='/Tshirts' exact component={Tshirts}/>*/}
+              <Route path='/Cart' exact component={Cart}/>
             </Switch>
             <Footer />
           </Router>

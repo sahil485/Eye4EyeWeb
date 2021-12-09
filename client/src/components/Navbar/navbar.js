@@ -65,7 +65,9 @@ const Navbar = () => {
                                 </NavItem>
 
                                 <NavItem>
-                                    
+                                    <NavLinks to='/Cart'>
+                                        <FaShoppingCart/>
+                                    </NavLinks>
                                 </NavItem>
                             </NavMenu>
 
