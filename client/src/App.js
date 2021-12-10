@@ -11,10 +11,11 @@ import { AppContext } from './Context';
 function App() 
 {
   const[items, setItems] = useState([
-    {name: "Midnight Blue and Purple",  quantity: 0, id : 1, price: 35},
-    {name: "White and Red", quantity: 0, id: 2, price: 35},
-    {name: "Forest Green", quantity: 0, id : 3, price: 35}
+    {name: "Midnight Blue and Purple",  size: "small", quantity: 0, id : 1, price: 35.00},
+    {name: "White and Red", quantity: 0, size: "small", id: 2, price: 35.00},
+    {name: "Forest Green", quantity: 0, size: "small", id : 3, price: 35.00}
   ]);
+
 
   function dispatchCartActions(item, actionType, num)
     {
@@ -40,13 +41,11 @@ function App()
               }
 
               alert("1 " + itemName + " sweatshirt added to cart.")
-
               return
             
             case "INCREMENT":
             
               items[item-1].quantity = num;
-              
               return
 
             case "DELETE":

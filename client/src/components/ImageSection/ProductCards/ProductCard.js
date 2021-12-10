@@ -27,25 +27,32 @@ const ProductCard = (props) => {
             >
                 <center><CardContent>   
                     <Typography
-                        style={{ fontSize: 14 }}
+                        style={{ fontSize: 14}}
                         color="textSecondary"
                         gutterBottom
                     >
                     
                     </Typography>
-                    <Typography variant="h5" component="h2">
+                    <Typography style={{
+                        fontFamily: "Gadget"
+                        }}
+                        variant="h5" component="h2">
                         {props.name}
                     </Typography>
                     <img className = "photo" src={props.link}/>
                     <Typography
                         style={{
                         marginBottom: 12,
+                        fontFamily: "cursive"
                         }}
                         color="textSecondary"
                     >
                         {props.sizes}
                     </Typography>
-                    <Typography variant="body2" component="p">
+                    <Typography style={{
+                        fontFamily: "cursive"
+                        }}
+                        variant="body2" component="p">
                         {props.price}
                     </Typography>
                     <Button onClick={handleAddToCart}>Add to Cart</Button>

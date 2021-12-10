@@ -6,7 +6,6 @@ import { AppContext } from '../../Context';
 import { Nav, NavbarContainer, NavLogo, NavIcon, MobileIcon, NavMenu, NavItem, NavLinks, NavItemBtn, NavBtnLink } 
 from './navbar.elements';
 import Logo1 from '../../images/Svg/LogoSVG.svg';
-import Modal from '../Cart/Modal/modal';
 
 const Navbar = () => {
     //useState is a hook created to create a class-less model
