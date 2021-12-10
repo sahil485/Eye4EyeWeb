@@ -45,16 +45,16 @@ height: 20%;
 
 export const Dec = styled.button`
 height: auto; 
-border-color: red;
-border-radius: 30px;
+/* border-color: red; */
+/* border-radius: 30px; */
 cursor: pointer;
-background-color: red;
+/* background-color: red; */
 `
 
 export const Inc = styled.button`
 height: auto; 
-border-color: green;
-border-radius: 30px;
+/* border-color: green; */
+/* border-radius: 30px; */
 cursor: pointer;
-background-color: green;
+/* background-color: green; */
 `
