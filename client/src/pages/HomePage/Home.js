@@ -1,7 +1,8 @@
 import React from 'react'
 import { InfoSection } from '../../components';
 import { ImageSection } from '../../components/ImageSection/ImageSection';
-import {imObjOne, imObjTwo, imObjThree, infoObjOne, infoObjTwo, infoObjThree } from '../Data'
+import Collage from '../../components/Collage/Collage';
+import {collageObjOne, imObjOne, imObjTwo, imObjThree, infoObjOne, infoObjTwo, infoObjThree } from '../Data'
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             {/*<ImageSection {...imObjOne}/>*/}
             <InfoSection {...infoObjOne}/>
             {/*<ImageSection {...imObjTwo}/>*/}
+            <Collage {...collageObjOne}/>
             <ImageSection {...imObjOne}/>   
             <InfoSection {...infoObjTwo}/>
             {/*<ImageSection {...imObjThree}/>

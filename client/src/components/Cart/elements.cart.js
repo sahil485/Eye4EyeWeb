@@ -23,7 +23,6 @@ width: 65%;
     width:100%;
     justify-content: center;
 }
-
 `
 
 export const NarrowCheckoutColumn = styled.div`
