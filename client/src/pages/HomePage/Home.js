@@ -8,10 +8,10 @@ const Home = () => {
     return (
         <>
             {/*<ImageSection {...imObjOne}/>*/}
-            <InfoSection {...infoObjOne}/>
+            {/* <InfoSection {...infoObjOne}/> */}
             {/*<ImageSection {...imObjTwo}/>*/}
             <Collage {...collageObjOne}/>
-            <ImageSection {...imObjOne}/>   
+            {/* <ImageSection {...imObjOne}/>    */}
             <InfoSection {...infoObjTwo}/>
             {/*<ImageSection {...imObjThree}/>
             <InfoSection {...infoObjThree}/>*/}

@@ -13,7 +13,7 @@ font-size: 1.2rem;
 position: sticky;
 top: 0;
 z-index: 999;
-border-bottom: 2px solid black;
+/* border-bottom: 2px solid black; */
 `;
 
 export const NavbarContainer = styled(Container)`

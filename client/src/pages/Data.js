@@ -86,7 +86,5 @@ export const imObjThree = {
 }
 
 export const collageObjOne = {
-    img1: require('../images/SliderIms/2.JPG').default,
-    img2: require('../images/SliderIms/2.JPG').default,
-    img3: require('../images/SliderIms/2.JPG').default
+    img: require('../images/Collages/Collage1alt.jpg').default
 }

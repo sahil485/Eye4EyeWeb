@@ -6,8 +6,8 @@ import { imObjTwo, infoObjTwo } from '../Data'
 const Hoodies = () => {
     return (
         <>
-            <ImageSection {...imObjTwo}/>
             <InfoSection {...infoObjTwo}/>
+            <ImageSection {...imObjTwo}/>
         </>
     )
 }

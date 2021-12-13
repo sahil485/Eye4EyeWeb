@@ -1,10 +1,10 @@
 import React from 'react'
 import { CollageSec, WideCollageColumn, NarrowCollageColumn, NarrowColumnCont1, NarrowColumnCont2, Img} from './collage.elements'
 
-function Collage() {
+function Collage({ img }) {
     return(
         <>
-            <CollageSec>
+            {/* <CollageSec>
                 <WideCollageColumn>
                     <Img src={require('../../images/SliderIms/1.JPG').default}/>
                 </WideCollageColumn>
@@ -16,6 +16,9 @@ function Collage() {
                         <Img src={require('../../images/SliderIms/3.JPG').default}/>
                     </NarrowColumnCont1>
                 </NarrowCollageColumn>
+            </CollageSec> */}
+            <CollageSec>
+                <Img src = {img}/>
             </CollageSec>
         </>
     )
