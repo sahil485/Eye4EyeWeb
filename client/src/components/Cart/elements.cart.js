@@ -8,6 +8,8 @@ margin-left: 100px;
 background: #fff;
 display: flex;
 justify-content: center;
+height: 500px;
+
 `
 
 export const ItemsCont = styled.div`

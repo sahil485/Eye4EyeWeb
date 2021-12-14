@@ -34,4 +34,7 @@ height: 50%;
 export const Img = styled.img`
 max-width: 100%;
 max-height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
 `;
