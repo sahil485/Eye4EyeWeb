@@ -4,6 +4,8 @@ import { InfoSec, InfoColumn, InfoRow, TextWrapper, TopLine, Heading, Subtitle, 
 import { Container, Button } from '../../globalStyles';
 import { Slider } from '../ImageSlider/Slider'
 
+import { Grid } from '@material-ui/core';
+
 const InfoSection = ({ imgStart, lightTopLine, lightTextDesc, buttonLabel, description, headline, lightText, topLine, primary, start, to, images }) => {
     return (
         <>

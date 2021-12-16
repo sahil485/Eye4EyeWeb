@@ -6,6 +6,8 @@ import { Button } from "../../../globalStyles";
 import "./styles.css"
 import { AppContext } from "../../../Context";
 
+import { Grid } from "@material-ui/core";
+
 const ProductCard = (props) => {
 
     const { dispatchCartActions } = useContext(AppContext);
@@ -21,7 +23,6 @@ const ProductCard = (props) => {
             <div style={{}}>
             <Card variant = "outlined"
                 style={{
-                width: 400,
                 backgroundColor: "white"
                 }}
             >
