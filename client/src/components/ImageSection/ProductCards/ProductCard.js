@@ -6,7 +6,14 @@ import { Button } from "../../../globalStyles";
 import "./styles.css"
 import { AppContext } from "../../../Context";
 
-import { Grid } from "@material-ui/core";
+import { Grid,makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles({
+    photo:{
+        height: "300px",
+        width: "300px"
+    }
+})
 
 const ProductCard = (props) => {
 
@@ -18,15 +25,18 @@ const ProductCard = (props) => {
         dispatchCartActions({name: props.name, quantity: 1}, "ADD", 1)
     }
 
+    const classes = useStyles();
+
     return (
         <>
             <div>
             <Card variant = "outlined"
                 style={{
-                backgroundColor: "white"
+                    backgroundColor: "white"
                 }}
             >
                 <center><CardContent>   
+                    <div className={classes.background}><img className = {classes.photo} src={props.link}/></div>
                     <Typography
                         style={{ fontSize: 14}}
                         color="textSecondary"
@@ -40,7 +50,6 @@ const ProductCard = (props) => {
                         variant="h5" component="h2">
                         {props.name}
                     </Typography>
-                    <img className = "photo" src={props.link}/>
                     <Typography
                         style={{
                         marginBottom: 12,
