@@ -10,8 +10,8 @@ import { Grid,makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
     photo:{
-        height: "300px",
-        width: "300px"
+        height: "auto",
+        width: "70%"
     }
 })
 

@@ -11,7 +11,7 @@ function Cart() {
 
     return (
         <>
-            <Grid container justifyContent='center'>
+            <Grid container m ={10} spacing ={10} justifyContent='center'>
                 {/* <Grid item xs={3} sm={3} md = {3} lg={3}/> */}
                 <Grid item xs={9} sm = {9} md = {4} lg = {4}>
                         <u><h2>Cart</h2></u>
