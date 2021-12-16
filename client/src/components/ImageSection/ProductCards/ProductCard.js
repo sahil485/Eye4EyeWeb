@@ -20,7 +20,7 @@ const ProductCard = (props) => {
 
     return (
         <>
-            <div style={{}}>
+            <div>
             <Card variant = "outlined"
                 style={{
                 backgroundColor: "white"

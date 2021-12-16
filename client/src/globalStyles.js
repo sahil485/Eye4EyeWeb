@@ -41,9 +41,6 @@ cursor: pointer;
     background: ${({primary}) => (primary ? '#e03c31' : '#4B59F7')};
 }
 
-@media screen and (max-width: 960px){
-    width: 20%;
-}
 `
 
 
