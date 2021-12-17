@@ -33,33 +33,31 @@ const InfoSection = ({ buttonLabel, description, headline, topLine, primary, to,
 
     return (
         <>
-            <Box bgcolor={"pink"} p={5}>
+            <Box bgcolor={"pink"} paddingTop={5} paddingRight={5} paddingBottom={5} paddingLeft={5}>
                     <Grid item container 
-                        xs={12}
                         spacing = {10} 
                         justifyContent='center'
                         alignItems='center'>
 
 
-                        <Grid item xs={12} sm= {12} md={12} lg={2}>
+                        <Grid justifyContent='center' item xs={2} sm={2} md={2} lg={2} xl={2}>
                             <div className = {classes.topLine}>{topLine}</div>
                             <h1 className={classes.heading}> {headline} </h1>
                             <p className = {classes.subtitle}>{description}</p>
                             <Link to={to}>
-                                {buttonLabel &&<Button big fontBig primary = {primary}>
+                                {buttonLabel &&<Button fontBig primary = {primary}>
                                 {buttonLabel}
                                 </Button>}
                             </Link>
                         </Grid>
 
-                        {showSlider && 
-                        <>
-                        <Grid item xs={0} sm={0} md={0} lg={3}/>
+                        <Grid item xs={0} sm={0} md={0} lg={2} xl={2}/>
 
-                        <Grid item xs={0} sm={0} md={0} lg={3} xl={4}>
-                            <Slider images = {images}/>
-                        </Grid>
-                        </>
+                        {showSlider &&
+
+                            <Grid item xs={0} sm={0} md={0} lg={3} xl={4}>
+                                <Slider images = {images}/>
+                            </Grid>
                         }
 
                     </Grid>
