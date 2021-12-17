@@ -12,7 +12,7 @@ function Cart() {
         <>
             <Grid container m ={10} spacing ={10} justifyContent='center'>
                 <Grid item xs={9} sm = {9} md = {4} lg = {4}>
-                        <u><h2>Cart</h2></u>
+                        <h2><u>Cart</u></h2>
                         <br/>
                         <br/>
                         <ItemList price = {price} update = {setPrice}/>
@@ -27,29 +27,17 @@ function Cart() {
                         <Grid item xs={9} sm={9} md={9} lg={9}>
                             <p>Subtotal: </p>
                             <br/>
+                            <p>Estimated Shipping and Handling: </p>
+                            <br/>
+                            <p>Estimated Tax: </p>
+                            <br/>
                         </Grid>
 
                         <Grid item xs={1} sm={1} md={1} lg={1}> 
                             <p>${price}.00</p>
                             <br/>
-                        </Grid>
-
-                        <Grid item xs={9} sm={9} md={9} lg={9}>
-                            <p>Estimated Shipping and Handling: </p>
-                            <br/>
-                        </Grid>
-
-                        <Grid item xs={1} sm={1} md={1} lg={1}>
                             <p>$0.00</p>
                             <br/>
-                        </Grid>
-
-                        <Grid item xs={9} sm={9} md={9} lg={9}>
-                            <p>Estimated Tax: </p>
-                            <br/>
-                        </Grid>
-
-                        <Grid item xs={1} sm={1} md={1} lg={1}>
                             <p>$0.00</p>
                             <br/>
                         </Grid>
