@@ -1,8 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { ItemList } from './ItemList'
-import { Checkout, WideCheckoutColumn, NarrowCheckoutColumn, ItemsCont } from './elements.cart';
 import { AppContext } from '../../Context'
-import { Grid, makeStyles } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 
 function Cart() {
 
@@ -12,15 +11,12 @@ function Cart() {
     return (
         <>
             <Grid container m ={10} spacing ={10} justifyContent='center'>
-                {/* <Grid item xs={3} sm={3} md = {3} lg={3}/> */}
                 <Grid item xs={9} sm = {9} md = {4} lg = {4}>
                         <u><h2>Cart</h2></u>
                         <br/>
                         <br/>
                         <ItemList price = {price} update = {setPrice}/>
                 </Grid>
-
-                {/* <Grid item lg={0} md ={0}/> */}
 
                 <Grid item xs = {9} sm = {9} md = {4} lg = {4} container>
                         <Grid item xs={12} sm={12} md={12} lg={12}>
