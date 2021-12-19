@@ -11,7 +11,7 @@ export const ItemList = (props) => {
     return (
         <>
             {nonZeroes.map(item => (<Item id = {item.id}/>))}
-            { items[0].quantity == 0 && items[1].quantity == 0 && items[2].quantity == 0 && <p>No items added to cart!</p> }
+            {items[0].quantity == 0 && items[1].quantity == 0 && items[2].quantity == 0 && <p>No items added to cart!</p>}
         </>
     )
 }

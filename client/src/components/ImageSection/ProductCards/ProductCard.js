@@ -16,12 +16,19 @@ const useStyles = makeStyles({
 
 const ProductCard = (props) => {
 
-    const { dispatchCartActions } = useContext(AppContext);
+    const { items, dispatchCartActions } = useContext(AppContext);
     
 
     const handleAddToCart = () =>
     {
-        dispatchCartActions(props.name, "ADD")
+        if(items[props.id-1].quantity < 5)
+        {
+            dispatchCartActions(props.name, "ADD")
+        }
+        else
+        {
+            alert(`There are already a max of ${props.name} sweatshirts in your cart!`)
+        }
     }
 
     const classes = useStyles();

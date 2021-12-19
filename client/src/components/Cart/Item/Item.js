@@ -16,11 +16,8 @@ const useStyle = makeStyles({
 export const Item = (props) => {
 
     const classes = useStyle();
-
     const { items, dispatchCartActions } = useContext(AppContext);
-
     const [quant, setQuant] = useState(items[props.id-1].quantity)
-
     const [changeType, setChangeType] = useState()
 
     const handleAdd = (e) => {

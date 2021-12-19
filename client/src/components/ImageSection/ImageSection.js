@@ -22,15 +22,15 @@ export const ImageSection = ({imgStart, start, img1, img2, img3, alt}) => {
                     </Grid>
 
                     <Grid item xs={12} sm={12} md = {6} lg = {4}>
-                        <ProductCard link = {img1} price={"$35.00"} name={"Midnight Blue and Purple"}/>
+                        <ProductCard link = {img1} price={"$35.00"} name={"Midnight Blue and Purple"} id ={1}/>
                     </Grid>
 
                     <Grid item xs={12} sm={12} md = {6} lg = {4}>
-                        <ProductCard link = {img2} price={"$35.00"} name={"White and Red"}/>
+                        <ProductCard link = {img2} price={"$35.00"} name={"White and Red"} id={2}/>
                     </Grid>
 
                     <Grid item xs={12} sm={12} md = {6} lg = {4}>
-                        <ProductCard link = {img3} price={"$35.00"} name={"Forest Green"}/>
+                        <ProductCard link = {img3} price={"$35.00"} name={"Forest Green"} id={3}/>
                     </Grid>
                 </Grid>
             </Box>

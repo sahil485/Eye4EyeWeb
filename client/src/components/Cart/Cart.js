@@ -6,7 +6,6 @@ import { Grid } from '@material-ui/core'
 function Cart() {
 
     const { price } = useContext(AppContext);
-    // const [currPrice, setPrice] = useState(price);
 
     return (
       <>
@@ -17,7 +16,7 @@ function Cart() {
             </h2>
             <br />
             <br />
-            <ItemList /*price={price}*/ /*update={setPrice}*/ />
+            <ItemList/>
           </Grid>
   
           <Grid item xs={9} sm={9} md={4} lg={4}>
