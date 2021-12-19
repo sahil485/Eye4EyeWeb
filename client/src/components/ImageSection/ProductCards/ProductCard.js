@@ -21,7 +21,7 @@ const ProductCard = (props) => {
 
     const handleAddToCart = () =>
     {
-        dispatchCartActions({name: props.name, quantity: 1}, "ADD", 1)
+        dispatchCartActions(props.name, "ADD")
     }
 
     const classes = useStyles();

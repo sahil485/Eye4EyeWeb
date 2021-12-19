@@ -17,30 +17,33 @@ export const Item = (props) => {
 
     const classes = useStyle();
 
-    const [quant, setQuant] = useState(props.num)
-    const { dispatchCartActions } = useContext(AppContext);
-    
+    const { items, dispatchCartActions } = useContext(AppContext);
+
+    const [quant, setQuant] = useState(items[props.id-1].quantity)
+
+    const [changeType, setChangeType] = useState()
+
     const handleAdd = (e) => {
         e.preventDefault();
-        if(quant<5)
+        if(items[props.id-1].quantity <5)
         {
-            setQuant(quant+1);
-            props.update(props.price + 35)
+            setQuant(items[props.id-1].quantity + 1)
+            setChangeType("INCREMENT")
         }
     }
 
     const handleSubtract = (e) => {
         e.preventDefault();
-        if(quant > 0)
+        if(items[props.id-1].quantity > 0)
         {
-            setQuant(quant-1);
-            props.update(props.price-35)
+            setQuant(items[props.id-1].quantity - 1)
+            setChangeType("DECREMENT")
         }
     }
 
     useEffect(() => {
-        dispatchCartActions(props.id, "INCREMENT", quant)
-    });
+        dispatchCartActions(props.id, changeType)
+    }, [quant]);
 
     return (
         <>
@@ -54,7 +57,7 @@ export const Item = (props) => {
                             <h4>{props.name}</h4>
                         </Grid>
                         <Grid item xs={12}>
-                            <p style = {{"font-size": "12.5px"}} >Quantity: <button onClick={handleSubtract}><FaMinus/></button> <input style = {{"width": "30px"}}value = {quant} readOnly/> <button onClick={handleAdd}><FaPlus/></button></p>
+                            <p style = {{"fontSize": "12.5px"}} >Quantity: <button onClick={handleSubtract}><FaMinus/></button> <input style = {{"width": "30px"}} value = {items[props.id-1].quantity} readOnly/> <button onClick={handleAdd}><FaPlus/></button></p>
                         </Grid>
                         <Grid item xs={12}>
 
