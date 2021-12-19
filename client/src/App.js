@@ -60,6 +60,9 @@ function App()
               return
 
             case "DELETE":
+              const temp4 = [...items];
+              temp4[item-1].quantity = 0;
+              setItems(temp4)
               return
         }
     }
