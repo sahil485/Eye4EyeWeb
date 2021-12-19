@@ -13,6 +13,7 @@ font-size: 1.2rem;
 position: sticky;
 top: 0;
 z-index: 999;
+/* border-bottom: 2px solid black; */
 `;
 
 export const NavbarContainer = styled(Container)`
@@ -31,10 +32,6 @@ text-decoration: none;
 font-size: 2rem;
 display: flex;
 align-items: center;
-`
-
-export const NavIcon = styled(FaMagento)`
-margin-right: 0.5rem;
 `
 
 export const MobileIcon = styled.div`
@@ -73,7 +70,7 @@ text-align: center;
     left: ${({click}) => (click ? 0 : '-100%')};
     opacity: 1;
     transition: all 0.5s ease;
-    background: #101522;
+    background: gray;
 
 }
 `;
@@ -83,7 +80,7 @@ height: 80px;
 border-bottom: 2px solid transparent;
 
 &:hover{
-    border-bottom: 2px solid black;
+    border-bottom: 5px solid red;
 }
 @media screen and (max-width: 960px){
     width: 100%;
@@ -112,26 +109,4 @@ height: 100%;
         transition: all 0.3s ease;
     }
 }
-`
-
-export const NavItemBtn = styled.li`
-@media screen and (max-width: 960px){
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 120px;
-}
-`
-
-export const NavBtnLink = styled(Link)`
-display: flex;
-justify-content: center;
-align-items: center;
-text-decoration: none;
-padding: 8px 16px;
-height: 100%;
-width: 100%;
-border: none;
-outline: none;
 `

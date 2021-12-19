@@ -3,39 +3,21 @@ import { FaBars, FaTimes, FaShoppingCart } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import { Button } from '../../globalStyles';
 import { AppContext } from '../../Context';
-import { Nav, NavbarContainer, NavLogo, NavIcon, MobileIcon, NavMenu, NavItem, NavLinks, NavItemBtn, NavBtnLink } 
+import { Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks } 
 from './navbar.elements';
 import Logo1 from '../../images/Svg/LogoSVG.svg';
-import Modal from '../Cart/Modal/modal';
 
 const Navbar = () => {
-    //useState is a hook created to create a class-less model
-    //useState returns a value and a function to update the value - the parameter is the initial value
-    //for example, const [click, setClick] = useState(false) creates a state hook with initial count variable of value false and setClick to update the value using setClick(!false, etc.)
     const [click, setClick] = useState(false);
-
-    const [button, setButton] = useState(true);
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
-    const showButton = () => {
-        if(window.innerWidth <= 960){
-            setButton(false);
-        }
-        else{
-            setButton(true);
-        }
+    const handleResize = () => {
+        setClick(false);
     }
-    const [openModal, setOpenModal] = useState(false)
 
-//use effect runs after every render- alternative to componentDidMount/Update methods 
-
-    useEffect(() => {
-        showButton()
-    }, [])
-
-    window.addEventListener('resize', showButton);
+    window.addEventListener('resize', handleResize);
 
     return (
         <>
@@ -65,9 +47,8 @@ const Navbar = () => {
                                 </NavItem>
 
                                 <NavItem>
-                                    <NavLinks to='/'>
-                                        <FaShoppingCart onClick={() => setOpenModal(true)}/>
-                                        {openModal && <Modal closeModal = {setOpenModal}/>}
+                                    <NavLinks to='/Cart'>
+                                        <FaShoppingCart/>
                                     </NavLinks>
                                 </NavItem>
                             </NavMenu>

@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Arial Black', Gadget, sans-serif;
+    /* font-family: 'Arial Black', "Gadget", sans-serif; */
 }
 `
 
@@ -41,9 +41,6 @@ cursor: pointer;
     background: ${({primary}) => (primary ? '#e03c31' : '#4B59F7')};
 }
 
-@media screen and (max-width: 960px){
-    width: 20%;
-}
 `
 
 

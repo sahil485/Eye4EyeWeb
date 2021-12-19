@@ -3,49 +3,72 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import { Button } from "../../../globalStyles";
-import "./styles.css"
 import { AppContext } from "../../../Context";
+
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles({
+    photo:{
+        height: "auto",
+        width: "70%"
+    }
+})
 
 const ProductCard = (props) => {
 
-    const { dispatchCartActions } = useContext(AppContext);
+    const { items, dispatchCartActions } = useContext(AppContext);
     
 
     const handleAddToCart = () =>
     {
-        dispatchCartActions({name: props.name, quantity: 1}, "ADD", 1)
+        if(items[props.id-1].quantity < 5)
+        {
+            dispatchCartActions(props.name, "ADD")
+        }
+        else
+        {
+            alert(`There are already a max of ${props.name} sweatshirts in your cart!`)
+        }
     }
+
+    const classes = useStyles();
 
     return (
         <>
-            <div style={{}}>
+            <div>
             <Card variant = "outlined"
                 style={{
-                width: 400,
-                backgroundColor: "white"
+                    backgroundColor: "white"
                 }}
             >
                 <center><CardContent>   
+                    <div className={classes.background}><img className = {classes.photo} src={props.link}/></div>
                     <Typography
-                        style={{ fontSize: 14 }}
+                        style={{ fontSize: 14}}
                         color="textSecondary"
                         gutterBottom
                     >
                     
                     </Typography>
-                    <Typography variant="h5" component="h2">
+                    <Typography style={{
+                        fontFamily: "Gadget"
+                        }}
+                        variant="h5" component="h2">
                         {props.name}
                     </Typography>
-                    <img className = "photo" src={props.link}/>
                     <Typography
                         style={{
                         marginBottom: 12,
+                        fontFamily: "cursive"
                         }}
                         color="textSecondary"
                     >
                         {props.sizes}
                     </Typography>
-                    <Typography variant="body2" component="p">
+                    <Typography style={{
+                        fontFamily: "cursive"
+                        }}
+                        variant="body2" component="p">
                         {props.price}
                     </Typography>
                     <Button onClick={handleAddToCart}>Add to Cart</Button>

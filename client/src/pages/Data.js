@@ -84,3 +84,7 @@ export const imObjThree = {
     img3: require('../images/Png/tshirt.jpg').default, 
     alt: 'Image'
 }
+
+export const collageObjOne = {
+    img: require('../images/Collages/Collage1alt.jpg').default
+}
